@@ -1,8 +1,9 @@
 [
   {
+    "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
     "name": "Classroom A",
     "type": "Education",
-    "capacity": "30",
+    "capacity": 30,
     "location": "Building 1, Floor 2",
     "furniture": "Desks and Chairs",
     "size": {
@@ -18,9 +19,10 @@
     }
   },
   {
+    "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
     "name": "Classroom B",
     "type": "Education",
-    "capacity": "25",
+    "capacity": 25,
     "location": "Building 1, Floor 2",
     "furniture": "Desks and Chairs",
     "size": {
@@ -36,9 +38,10 @@
     }
   },
   {
+    "id": "f0292694-e098-4ec7-828c-a10d63a3725b",
     "name": "Conference Room C",
     "type": "Meeting",
-    "capacity": "12",
+    "capacity": 12,
     "location": "Building 2, Floor 3",
     "furniture": "Conference Table and Chairs",
     "size": {
@@ -54,9 +57,10 @@
     }
   },
   {
+    "id": "245ced35-f538-44c7-ae37-a78116e93c05",
     "name": "Computer Lab D",
     "type": "Computer Lab",
-    "capacity": "20",
+    "capacity": 20,
     "location": "Building 3, Floor 1",
     "furniture": "Computer Workstations",
     "size": {
@@ -72,9 +76,10 @@
     }
   },
   {
+    "id": "835a65ad-7b64-431d-ac9c-b4c91c71c68e",
     "name": "Library Study Room E",
     "type": "Study",
-    "capacity": "8",
+    "capacity": 8,
     "location": "Library, 2nd Floor",
     "furniture": "Tables and Chairs",
     "size": {
@@ -90,9 +95,10 @@
     }
   },
   {
+    "id": "e6b199fc-6354-4c3b-a22a-64667d88d75e",
     "name": "Art Studio F",
     "type": "Creative Arts",
-    "capacity": "15",
+    "capacity": 15,
     "location": "Building 4, Floor 2",
     "furniture": "Art Tables and Easels",
     "size": {
@@ -108,9 +114,10 @@
     }
   },
   {
+    "id": "4d9941c6-5ca6-4276-9217-ff4e2b003531",
     "name": "Physics Laboratory G",
     "type": "Science Lab",
-    "capacity": "20",
+    "capacity": 20,
     "location": "Building 5, Floor 3",
     "furniture": "Lab Tables and Equipment",
     "size": {
@@ -126,9 +133,10 @@
     }
   },
   {
+    "id": "51a2e432-766c-4c67-a767-42132331d06b",
     "name": "Music Room H",
     "type": "Music",
-    "capacity": "10",
+    "capacity": 10,
     "location": "Building 6, Floor 1",
     "furniture": "Musical Instruments and Seating",
     "size": {
@@ -144,9 +152,10 @@
     }
   },
   {
+    "id": "2b69fed2-0a0f-4d01-b394-43ec0d6bfa7b",
     "name": "Language Lab I",
     "type": "Language Learning",
-    "capacity": "12",
+    "capacity": 12,
     "location": "Building 7, Floor 2",
     "furniture": "Language Learning Stations",
     "size": {
@@ -162,9 +171,10 @@
     }
   },
   {
+    "id": "06e0dcdf-d551-4f03-88c7-3c43d117260e",
     "name": "Gymnasium J",
     "type": "Physical Education",
-    "capacity": "50",
+    "capacity": 50,
     "location": "Athletic Center",
     "furniture": "Exercise Equipment and Mats",
     "size": {
