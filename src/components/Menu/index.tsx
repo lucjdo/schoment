@@ -1,4 +1,5 @@
 import SchoolIcon from '@mui/icons-material/School'
+import { Link } from 'wouter'
 import {
   ListItemText,
   Stack,
@@ -15,8 +16,6 @@ export default function Menu({ sections, appName }: MenuProps) {
   return (
     <Paper
       sx={{
-        width: 300,
-        maxWidth: '100%',
         height: 'calc(100vh - 90px)',
         padding: '2rem 1rem',
         backgroundColor: 'grey.800',
@@ -38,24 +37,25 @@ export default function Menu({ sections, appName }: MenuProps) {
       <Divider sx={{ backgroundColor: '#e3f2fd' }} />
       <MenuList sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         {sections.map((section) => (
-          <MenuItem
-            key={section.label}
-            sx={{
-              height: 50,
-              color: 'white',
-              borderRadius: '0.75rem',
-              '&:hover': {
-                backgroundColor: 'primary.main'
-              }
-            }}
-          >
-            <ListItemIcon sx={{ color: 'common.white' }}>
-              {section.icon}
-            </ListItemIcon>
-            <ListItemText sx={{ color: 'common.white' }}>
-              {section.label}
-            </ListItemText>
-          </MenuItem>
+          <Link href={section.path} key={section.label}>
+            <MenuItem
+              sx={{
+                height: 50,
+                color: 'white',
+                borderRadius: '0.75rem',
+                '&:hover': {
+                  backgroundColor: 'primary.main'
+                }
+              }}
+            >
+              <ListItemIcon sx={{ color: 'common.white' }}>
+                {section.icon}
+              </ListItemIcon>
+              <ListItemText sx={{ color: 'common.white' }}>
+                {section.label}
+              </ListItemText>
+            </MenuItem>
+          </Link>
         ))}
       </MenuList>
     </Paper>
