@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Classroom A",
+    "type": "Education",
+    "capacity": "30",
+    "location": "Building 1, Floor 2",
+    "furniture": "Desks and Chairs",
+    "size": {
+      "length": "20",
+      "width": "30",
+      "height": "10"
+    },
+    "amenities": ["Whiteboard", "Projector", "Chalkboard"],
+    "accessories": {
+      "lighting": "Fluorescent",
+      "ventilation": "Windows and HVAC",
+      "storage": "Cabinets and Shelves"
+    }
+  },
+  {
+    "name": "Classroom B",
+    "type": "Education",
+    "capacity": "25",
+    "location": "Building 1, Floor 2",
+    "furniture": "Desks and Chairs",
+    "size": {
+      "length": "18",
+      "width": "25",
+      "height": "9"
+    },
+    "amenities": ["Whiteboard", "Projector"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "Windows and HVAC",
+      "storage": "Cabinets"
+    }
+  },
+  {
+    "name": "Conference Room C",
+    "type": "Meeting",
+    "capacity": "12",
+    "location": "Building 2, Floor 3",
+    "furniture": "Conference Table and Chairs",
+    "size": {
+      "length": "15",
+      "width": "20",
+      "height": "8"
+    },
+    "amenities": ["Video Conferencing", "Audio Equipment"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "Air Conditioning",
+      "storage": "Cabinets"
+    }
+  },
+  {
+    "name": "Computer Lab D",
+    "type": "Computer Lab",
+    "capacity": "20",
+    "location": "Building 3, Floor 1",
+    "furniture": "Computer Workstations",
+    "size": {
+      "length": "25",
+      "width": "30",
+      "height": "10"
+    },
+    "amenities": ["Computer Stations", "Printer"],
+    "accessories": {
+      "lighting": "Fluorescent",
+      "ventilation": "HVAC",
+      "storage": "Racks and Cabinets"
+    }
+  },
+  {
+    "name": "Library Study Room E",
+    "type": "Study",
+    "capacity": "8",
+    "location": "Library, 2nd Floor",
+    "furniture": "Tables and Chairs",
+    "size": {
+      "length": "12",
+      "width": "15",
+      "height": "8"
+    },
+    "amenities": ["Quiet Environment"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "Windows",
+      "storage": "Shelves"
+    }
+  },
+  {
+    "name": "Art Studio F",
+    "type": "Creative Arts",
+    "capacity": "15",
+    "location": "Building 4, Floor 2",
+    "furniture": "Art Tables and Easels",
+    "size": {
+      "length": "18",
+      "width": "25",
+      "height": "10"
+    },
+    "amenities": ["Art Supplies"],
+    "accessories": {
+      "lighting": "Natural Light and Spotlights",
+      "ventilation": "Windows",
+      "storage": "Art Supplies Storage"
+    }
+  },
+  {
+    "name": "Physics Laboratory G",
+    "type": "Science Lab",
+    "capacity": "20",
+    "location": "Building 5, Floor 3",
+    "furniture": "Lab Tables and Equipment",
+    "size": {
+      "length": "20",
+      "width": "30",
+      "height": "12"
+    },
+    "amenities": ["Lab Equipment", "Safety Gear"],
+    "accessories": {
+      "lighting": "Fluorescent",
+      "ventilation": "Lab Hoods",
+      "storage": "Lab Cabinets"
+    }
+  },
+  {
+    "name": "Music Room H",
+    "type": "Music",
+    "capacity": "10",
+    "location": "Building 6, Floor 1",
+    "furniture": "Musical Instruments and Seating",
+    "size": {
+      "length": "15",
+      "width": "20",
+      "height": "10"
+    },
+    "amenities": ["Musical Instruments", "Acoustic Panels"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "Windows",
+      "storage": "Instrument Storage"
+    }
+  },
+  {
+    "name": "Language Lab I",
+    "type": "Language Learning",
+    "capacity": "12",
+    "location": "Building 7, Floor 2",
+    "furniture": "Language Learning Stations",
+    "size": {
+      "length": "18",
+      "width": "25",
+      "height": "9"
+    },
+    "amenities": ["Language Software", "Headsets"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "HVAC",
+      "storage": "Cabinets"
+    }
+  },
+  {
+    "name": "Gymnasium J",
+    "type": "Physical Education",
+    "capacity": "50",
+    "location": "Athletic Center",
+    "furniture": "Exercise Equipment and Mats",
+    "size": {
+      "length": "50",
+      "width": "60",
+      "height": "20"
+    },
+    "amenities": ["Sports Equipment", "Locker Rooms"],
+    "accessories": {
+      "lighting": "LED",
+      "ventilation": "HVAC",
+      "storage": "Equipment Storage"
+    }
+  }
+]
