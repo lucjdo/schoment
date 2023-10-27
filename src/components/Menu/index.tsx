@@ -18,7 +18,7 @@ export default function Menu({ sections, appName }: MenuProps) {
       sx={{
         height: 'calc(100vh - 90px)',
         padding: '2rem 1rem',
-        backgroundColor: 'grey.800',
+        backgroundColor: '#263238',
         borderRadius: '0.75rem'
       }}
     >
