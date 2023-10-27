@@ -17,8 +17,10 @@ export default function Menu({ sections, appName }: MenuProps) {
       sx={{
         width: 300,
         maxWidth: '100%',
-        height: 'calc(100vh - 60px)',
-        pt: 3
+        height: 'calc(100vh - 90px)',
+        padding: '2rem 1rem',
+        backgroundColor: 'grey.800',
+        borderRadius: '0.75rem'
       }}
     >
       <Stack
@@ -28,15 +30,31 @@ export default function Menu({ sections, appName }: MenuProps) {
         mb={1}
         justifyContent='center'
       >
-        <SchoolIcon />
-        <Typography variant='h5'>{appName}</Typography>
+        <SchoolIcon sx={{ color: 'common.white' }} />
+        <Typography sx={{ color: 'common.white' }} variant='h5'>
+          {appName}
+        </Typography>
       </Stack>
-      <MenuList>
-        <Divider />
+      <Divider sx={{ backgroundColor: '#e3f2fd' }} />
+      <MenuList sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         {sections.map((section) => (
-          <MenuItem key={section.label} sx={{ height: 50 }}>
-            <ListItemIcon>{section.icon}</ListItemIcon>
-            <ListItemText>{section.label}</ListItemText>
+          <MenuItem
+            key={section.label}
+            sx={{
+              height: 50,
+              color: 'white',
+              borderRadius: '0.75rem',
+              '&:hover': {
+                backgroundColor: 'primary.main'
+              }
+            }}
+          >
+            <ListItemIcon sx={{ color: 'common.white' }}>
+              {section.icon}
+            </ListItemIcon>
+            <ListItemText sx={{ color: 'common.white' }}>
+              {section.label}
+            </ListItemText>
           </MenuItem>
         ))}
       </MenuList>
