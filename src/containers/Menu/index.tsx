@@ -4,8 +4,16 @@ import MenuUI from '@components/Menu'
 import { MenuItem } from '@components/Menu/types'
 
 const MENU_SECTIONS: MenuItem[] = [
-  { label: 'Rooms', icon: <MeetingRoomIcon fontSize='medium' /> },
-  { label: 'Students', icon: <GroupIcon fontSize='medium' /> }
+  {
+    label: 'Rooms',
+    icon: <MeetingRoomIcon fontSize='medium' />,
+    path: '/rooms'
+  },
+  {
+    label: 'Students',
+    icon: <GroupIcon fontSize='medium' />,
+    path: '/students'
+  }
   // Add more sections here as needed
 ]
 
