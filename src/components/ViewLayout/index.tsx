@@ -4,7 +4,7 @@ import { ViewLayoutProps } from './types'
 
 export default function ViewLayout({ children }: ViewLayoutProps) {
   return (
-    <Paper sx={{ p: 5, pb: 2 }}>
+    <Paper sx={{ p: 5 }}>
       {React.Children.map(children, (child) => {
         return child
       })}
