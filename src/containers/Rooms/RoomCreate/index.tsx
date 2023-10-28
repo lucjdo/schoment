@@ -8,17 +8,30 @@ import {
   Stack,
   Button
 } from '@mui/material'
-import { AMENITIES_OPTIONS } from './utils'
+import { AMENITIES_OPTIONS, TYPE_OPTIONS, addMissingProps } from './utils'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { ConfirmationDialog } from '@components/ConfirmationDialog'
 import Title from '@components/Title'
 import { NewRoomInputs } from './types'
+import { useNewRoom } from '@hooks/useRooms'
 
 export default function RoomCreate() {
   const [openDialog, setOpenDialog] = useState(false)
-  const { register, handleSubmit, watch } = useForm<NewRoomInputs>()
-  const onSubmit: SubmitHandler<NewRoomInputs> = (data) => console.log(data)
+  const { register, handleSubmit, watch } = useForm<NewRoomInputs>({
+    defaultValues: {
+      name: 'Classroom',
+      location: 'Build 1',
+      capacity: 30,
+      type: 'Education'
+    }
+  })
+  const { mutate } = useNewRoom()
+
+  const onSubmit: SubmitHandler<NewRoomInputs> = (data) => {
+    const newRoom = addMissingProps(data)
+    mutate(newRoom)
+  }
 
   return (
     <ViewLayout>
@@ -30,16 +43,24 @@ export default function RoomCreate() {
               <FormLabel>Name</FormLabel>
               <TextField
                 placeholder='Type in here…'
-                defaultValue='Classroom'
                 required
                 {...register('name')}
               />
+            </FormControl>
+            <FormControl sx={{ m: 1 }}>
+              <FormLabel>Type</FormLabel>
+              <Select value={watch('type')} {...register('type')}>
+                {TYPE_OPTIONS.map((type) => (
+                  <MenuItem key={type} value={type}>
+                    {type}
+                  </MenuItem>
+                ))}
+              </Select>
             </FormControl>
             <FormControl>
               <FormLabel>Location</FormLabel>
               <TextField
                 placeholder='Type in here…'
-                defaultValue='Build 1'
                 required
                 {...register('location')}
               />
@@ -48,16 +69,14 @@ export default function RoomCreate() {
               <FormLabel>Capacity</FormLabel>
               <TextField
                 placeholder='Type in here…'
-                defaultValue={30}
                 type='number'
                 required
                 {...register('capacity')}
               />
             </FormControl>
             <FormControl sx={{ m: 1 }}>
-              <FormLabel id='demo-multiple-name-label'>Amenities</FormLabel>
+              <FormLabel>Amenities</FormLabel>
               <Select
-                id='amenities-multiple'
                 multiple
                 value={watch('amenities') || []}
                 {...register('amenities')}
