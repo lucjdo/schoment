@@ -1,14 +1,13 @@
 import { Stack } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
-import ROOMS from '../../mocks/Rooms.json'
 import ViewLayout from '@components/ViewLayout'
 import RoomsTable from '@components/Rooms/RoomsTable'
-import { Room } from 'src/types'
 import ButtonLink from '@components/ButtonLink'
 import Title from '@components/Title'
+import { useRooms } from '@hooks/useRooms'
 
 export default function Rooms() {
-  const rooms: Room[] = ROOMS as Room[]
+  const { data, isLoading } = useRooms()
 
   return (
     <ViewLayout>
@@ -20,11 +19,15 @@ export default function Rooms() {
         }}
       >
         <Title>Rooms</Title>
-        <ButtonLink href='rooms/create' startIcon={<AddIcon />}>
+        <ButtonLink
+          href='rooms/create'
+          startIcon={<AddIcon />}
+          disabled={isLoading}
+        >
           New Room
         </ButtonLink>
       </Stack>
-      <RoomsTable rooms={rooms} />
+      {isLoading ? 'Loading Rooms' : <RoomsTable rooms={data!} />}
     </ViewLayout>
   )
 }
