@@ -13,6 +13,7 @@ import { EnhancedTableProps, Order, RoomsTableProps } from './types'
 import { Room } from 'src/types'
 import sortBy from 'lodash.sortby'
 import { getRowsOptions, headCells, maxRowsPerPage } from './utils'
+import { Link } from 'wouter'
 
 function RoomsTableHead(props: EnhancedTableProps) {
   const { order, orderBy, onRequestSort } = props
@@ -65,10 +66,6 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
     setOrderBy(property)
   }
 
-  const handleClick = (_event: React.MouseEvent<unknown>, id: string) => {
-    console.log(id)
-  }
-
   const handleChangePage = (_event: unknown, newPage: number) => {
     setPage(newPage)
   }
@@ -108,26 +105,21 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
               const labelId = `enhanced-table-checkbox-${index}`
 
               return (
-                <TableRow
-                  hover
-                  onClick={(event) => handleClick(event, row.id)}
-                  role='checkbox'
-                  tabIndex={-1}
-                  key={row.id}
-                  sx={{ cursor: 'pointer' }}
-                >
-                  <TableCell
-                    component='th'
-                    id={labelId}
-                    scope='row'
-                    padding='none'
-                  >
-                    {row.name}
-                  </TableCell>
-                  <TableCell>{row.type}</TableCell>
-                  <TableCell align='center'>{row.location}</TableCell>
-                  <TableCell align='right'>{row.capacity}</TableCell>
-                </TableRow>
+                <Link href={`/rooms/${row.id}`} key={row.id}>
+                  <TableRow hover tabIndex={-1} sx={{ cursor: 'pointer' }}>
+                    <TableCell
+                      component='th'
+                      id={labelId}
+                      scope='row'
+                      padding='none'
+                    >
+                      {row.name}
+                    </TableCell>
+                    <TableCell>{row.type}</TableCell>
+                    <TableCell align='center'>{row.location}</TableCell>
+                    <TableCell align='right'>{row.capacity}</TableCell>
+                  </TableRow>
+                </Link>
               )
             })}
             {emptyRows > 0 && (

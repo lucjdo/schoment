@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { createRoom, getRooms } from '@services/rooms'
-import { Room } from 'src/types'
+import { Room } from '../types'
 
 export function useRooms() {
   return useQuery<Room[]>('rooms', getRooms)

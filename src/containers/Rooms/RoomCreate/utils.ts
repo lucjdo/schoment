@@ -1,4 +1,4 @@
-import { Lighting, Room } from 'src/types'
+import type { Room, Lighting } from '../../../types.d.ts'
 import { NewRoomInputs } from './types'
 
 export const AMENITIES_OPTIONS = [
@@ -44,7 +44,7 @@ export function addMissingProps(roomInputs: NewRoomInputs): Room {
       height: '9'
     },
     accessories: {
-      lighting: Lighting.LED,
+      lighting: 'LED' as Lighting,
       ventilation: 'HVAC',
       storage: 'Cabinets'
     }
