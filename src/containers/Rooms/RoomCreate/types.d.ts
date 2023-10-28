@@ -5,4 +5,5 @@ export type NewRoomInputs = {
   location: string
   capacity: number
   amenities: typeof AMENITIES_OPTIONS
+  type: string
 }
