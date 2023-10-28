@@ -18,3 +18,11 @@ export function createRoom(newRoom: Room): Promise<Room> {
   setInSession('rooms', newRooms)
   return serviceFaker(newRooms)
 }
+
+export function getRoomById(id: string): Promise<Room> | null {
+  const sessionRooms: Room[] = getFromSession('rooms')
+  const roomFinded = sessionRooms.find((room) => room.id === id)
+
+  if (!roomFinded) return null
+  return serviceFaker(roomFinded)
+}
