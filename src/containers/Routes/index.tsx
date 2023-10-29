@@ -1,6 +1,8 @@
 import Rooms from '@containers/Rooms'
 import RoomCreate from '@containers/Rooms/RoomCreate'
 import RoomDetails from '@containers/Rooms/RoomDetails'
+import Students from '@containers/Students'
+import StudentsCreate from '@containers/Students/StudentsCreate'
 import { Route, Switch } from 'wouter'
 
 function RoomsRoutes() {
@@ -17,11 +19,24 @@ function RoomsRoutes() {
   )
 }
 
-export default function Routes() {
+function StudentsRoutes() {
   return (
     <Switch>
-      <RoomsRoutes />
-      <Route path='/students'>Students</Route>
+      <Route path='/students'>
+        <Students />
+      </Route>
+      <Route path='/students/create'>
+        <StudentsCreate />
+      </Route>
     </Switch>
+  )
+}
+
+export default function Routes() {
+  return (
+    <>
+      <RoomsRoutes />
+      <StudentsRoutes />
+    </>
   )
 }
