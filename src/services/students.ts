@@ -10,3 +10,11 @@ export function getStudents(): Promise<Student[]> {
 
   return serviceFaker(sessionStudents || STUDENTS)
 }
+
+export function createStudent(newStudent: Student): Promise<Student> {
+  const sessionStudents = getFromSession('students')
+  const currentStudents = sessionStudents || STUDENTS
+  const newStudents = [...currentStudents, newStudent]
+  setInSession('students', newStudents)
+  return serviceFaker(newStudents)
+}
