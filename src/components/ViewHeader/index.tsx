@@ -18,6 +18,7 @@ export default function ViewHeader({ title, btnProps }: ViewHeaderProps) {
         href={btnProps.href}
         startIcon={<AddIcon />}
         disabled={btnProps.disabled}
+        size='small'
       >
         {btnProps.label}
       </ButtonLink>

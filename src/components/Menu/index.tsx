@@ -1,18 +1,20 @@
-import SchoolIcon from '@mui/icons-material/School'
-import { Link } from 'wouter'
+import schomentSVG from '@assets/schoment-logo.svg'
+import { Link, useLocation } from 'wouter'
 import {
   ListItemText,
   Stack,
   MenuList,
   MenuItem,
   ListItemIcon,
-  Typography,
   Divider,
   Paper
 } from '@mui/material'
 import { MenuProps } from './types'
 
-export default function Menu({ sections, appName }: MenuProps) {
+export default function Menu({ sections }: MenuProps) {
+  const [location] = useLocation()
+  const isSelected = (section: string) =>
+    location.split('/')[1] === section.toLowerCase()
   return (
     <Paper
       sx={{
@@ -22,17 +24,8 @@ export default function Menu({ sections, appName }: MenuProps) {
         borderRadius: '0.75rem'
       }}
     >
-      <Stack
-        direction='row'
-        gap={1}
-        alignItems='center'
-        mb={1}
-        justifyContent='center'
-      >
-        <SchoolIcon sx={{ color: 'common.white' }} />
-        <Typography sx={{ color: 'common.white' }} variant='h5'>
-          {appName}
-        </Typography>
+      <Stack alignItems='center' mb={1}>
+        <img src={schomentSVG} width={180} />
       </Stack>
       <Divider sx={{ backgroundColor: '#e3f2fd' }} />
       <MenuList sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -45,8 +38,10 @@ export default function Menu({ sections, appName }: MenuProps) {
                 borderRadius: '0.75rem',
                 '&:hover': {
                   backgroundColor: 'primary.main'
-                }
+                },
+                '&.Mui-selected': {}
               }}
+              selected={isSelected(section.label)}
             >
               <ListItemIcon sx={{ color: 'common.white' }}>
                 {section.icon}

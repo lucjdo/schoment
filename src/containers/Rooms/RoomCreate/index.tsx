@@ -1,4 +1,5 @@
 import ViewLayout from '@components/ViewLayout'
+import clasRoom from '@assets/clasroom.svg'
 import {
   FormControl,
   FormLabel,
@@ -37,69 +38,88 @@ export default function RoomCreate() {
     <ViewLayout>
       <Stack gap={2}>
         <Title>New Room</Title>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Stack spacing={3} width={500}>
-            <FormControl>
-              <FormLabel>Name</FormLabel>
-              <TextField
-                placeholder='Type in here…'
-                required
-                {...register('name')}
-              />
-            </FormControl>
-            <FormControl sx={{ m: 1 }}>
-              <FormLabel>Type</FormLabel>
-              <Select value={watch('type')} {...register('type')}>
-                {TYPE_OPTIONS.map((type) => (
-                  <MenuItem key={type} value={type}>
-                    {type}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel>Location</FormLabel>
-              <TextField
-                placeholder='Type in here…'
-                required
-                {...register('location')}
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel>Capacity</FormLabel>
-              <TextField
-                placeholder='Type in here…'
-                type='number'
-                required
-                {...register('capacity')}
-              />
-            </FormControl>
-            <FormControl sx={{ m: 1 }}>
-              <FormLabel>Amenities</FormLabel>
-              <Select
-                multiple
-                value={watch('amenities') || []}
-                {...register('amenities')}
-              >
-                {AMENITIES_OPTIONS.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <Button variant='contained' onClick={() => setOpenDialog(true)}>
-              Save
-            </Button>
+        <Stack direction='row' justifyContent='space-between'>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Stack spacing={3} width={500}>
+              <FormControl>
+                <FormLabel>Name</FormLabel>
+                <TextField
+                  placeholder='Type in here…'
+                  required
+                  size='small'
+                  {...register('name')}
+                />
+              </FormControl>
+              <FormControl sx={{ m: 1 }}>
+                <FormLabel>Type</FormLabel>
+                <Select
+                  value={watch('type')}
+                  size='small'
+                  {...register('type')}
+                >
+                  {TYPE_OPTIONS.map((type) => (
+                    <MenuItem key={type} value={type}>
+                      {type}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <FormControl>
+                <FormLabel>Location</FormLabel>
+                <TextField
+                  placeholder='Type in here…'
+                  required
+                  size='small'
+                  {...register('location')}
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Capacity</FormLabel>
+                <TextField
+                  placeholder='Type in here…'
+                  type='number'
+                  required
+                  size='small'
+                  {...register('capacity')}
+                />
+              </FormControl>
+              <FormControl sx={{ m: 1 }}>
+                <FormLabel>Amenities</FormLabel>
+                <Select
+                  multiple
+                  value={watch('amenities') || []}
+                  {...register('amenities')}
+                  size='small'
+                >
+                  {AMENITIES_OPTIONS.map((name) => (
+                    <MenuItem key={name} value={name}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <Button variant='contained' onClick={() => setOpenDialog(true)}>
+                Save
+              </Button>
+            </Stack>
+            <ConfirmationDialog
+              id='create-new-rom-dialog'
+              title='Are you sure you want to create this new room?'
+              open={openDialog}
+              onClose={() => setOpenDialog(false)}
+              onConfirm={handleSubmit(onSubmit)}
+            />
+          </form>
+          <Stack
+            alignItems={'center'}
+            flexGrow={1}
+            sx={{
+              opacity: 0.7
+            }}
+          >
+            <img src={clasRoom} width={400} />
           </Stack>
-          <ConfirmationDialog
-            id='create-new-rom-dialog'
-            title='Are you sure you want to create this new room?'
-            open={openDialog}
-            onClose={() => setOpenDialog(false)}
-            onConfirm={handleSubmit(onSubmit)}
-          />
-        </form>
+        </Stack>
       </Stack>
     </ViewLayout>
   )
