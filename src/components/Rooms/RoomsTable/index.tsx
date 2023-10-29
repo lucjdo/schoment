@@ -93,7 +93,9 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
   return (
     <Box sx={{ width: '100%' }}>
       <TableContainer>
-        <Table sx={{ minWidth: 750 }} aria-labelledby='tableTitle'>
+        <Table
+          sx={{ minWidth: 750, maxHeight: 650, overflowY: 'scroll', pr: 2 }}
+        >
           <RoomsTableHead
             order={order}
             orderBy={orderBy}

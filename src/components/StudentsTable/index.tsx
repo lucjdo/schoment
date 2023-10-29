@@ -93,7 +93,7 @@ export default function StudentsTable({ students }: RoomsTableProps) {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <TableContainer>
+      <TableContainer sx={{ maxHeight: 650, overflowY: 'scroll', pr: 2 }}>
         <Table sx={{ minWidth: 750 }}>
           <StudentsTableHead
             order={order}
