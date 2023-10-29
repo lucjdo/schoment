@@ -1,4 +1,5 @@
 import ViewLayout from '@components/ViewLayout'
+
 import {
   FormControl,
   FormLabel,
@@ -6,12 +7,12 @@ import {
   TextField,
   Select,
   Stack,
-  Button
+  Button,
+  Typography
 } from '@mui/material'
 import { GENDER_OPTIONS, ROOM_OPTIONS } from './utils'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { ConfirmationDialog } from '@components/ConfirmationDialog'
 import Title from '@components/Title'
 import { NewStudentsInputs } from './types'
 import { useNewStudent } from '@hooks/students/useNewStudent'
@@ -40,7 +41,7 @@ export default function StudentsCreate() {
               <FormLabel>First Name</FormLabel>
               <TextField
                 placeholder='Type in here…'
-                {...register('firstname')}
+                {...(register('firstname'), { required: true })}
               />
             </FormControl>
             <FormControl>
@@ -53,7 +54,10 @@ export default function StudentsCreate() {
             </FormControl>
             <FormControl sx={{ m: 1 }}>
               <FormLabel>Gender</FormLabel>
-              <Select value={watch('gender')} {...register('gender')}>
+              <Select
+                value={watch('gender')}
+                {...(register('gender'), { required: true })}
+              >
                 {GENDER_OPTIONS.map((type) => (
                   <MenuItem key={type} value={type}>
                     {type}
@@ -65,14 +69,18 @@ export default function StudentsCreate() {
               <FormLabel>Age</FormLabel>
               <TextField
                 placeholder='Type in here…'
-                required
                 type='number'
+                required={true}
+                inputProps={{ min: 11, max: 17 }}
                 {...register('age')}
               />
             </FormControl>
             <FormControl sx={{ m: 1 }}>
               <FormLabel>Room</FormLabel>
-              <Select value={watch('room')} {...register('room')}>
+              <Select
+                value={watch('room')}
+                {...(register('room'), { required: true })}
+              >
                 {ROOM_OPTIONS.map((type) => (
                   <MenuItem key={type.id} value={type as unknown as string}>
                     {type.name}
@@ -80,23 +88,24 @@ export default function StudentsCreate() {
                 ))}
               </Select>
             </FormControl>
-            <Button
-              variant='contained'
-              onClick={(e) => {
-                e.preventDefault()
-                setOpenDialog(true)
-              }}
-            >
-              Save
-            </Button>
+            {openDialog ? (
+              <Stack gap={2}>
+                <Typography variant='body1' sx={{ color: 'red' }}>
+                  Are you sure you want to create this student?
+                </Typography>
+                <Stack gap={1} justifyContent='space-around' direction={'row'}>
+                  <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
+                  <Button variant='contained' type='submit'>
+                    Yes, Create
+                  </Button>
+                </Stack>
+              </Stack>
+            ) : (
+              <Button variant='contained' onClick={() => setOpenDialog(true)}>
+                Save
+              </Button>
+            )}
           </Stack>
-          <ConfirmationDialog
-            id='create-new-student-dialog'
-            title='Are you sure you want to create this new student?'
-            open={openDialog}
-            onClose={() => setOpenDialog(false)}
-            onConfirm={handleSubmit(onSubmit)}
-          />
         </form>
       </Stack>
     </ViewLayout>
