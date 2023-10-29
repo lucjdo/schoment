@@ -8,6 +8,15 @@ export interface Room {
   size: Size
   amenities: string[]
   accessories: Accessories
+  students?: Student[]
+}
+
+export interface Student {
+  firstname: string
+  lastname: string
+  id: number
+  age: number
+  gender: 'Male' | 'Female'
 }
 
 export interface Accessories {

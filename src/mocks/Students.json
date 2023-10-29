@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "firstname": "John",
+    "lastname": "Smith",
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 2,
+    "firstname": "Emily",
+    "lastname": "Johnson",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 3,
+    "firstname": "Michael",
+    "lastname": "Williams",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "firstname": "Sophia",
+    "lastname": "Brown",
+    "age": 16,
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "firstname": "William",
+    "lastname": "Jones",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 6,
+    "firstname": "Olivia",
+    "lastname": "Davis",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 7,
+    "firstname": "James",
+    "lastname": "Miller",
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 8,
+    "firstname": "Emma",
+    "lastname": "Wilson",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 9,
+    "firstname": "Benjamin",
+    "lastname": "Taylor",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 10,
+    "firstname": "Mia",
+    "lastname": "Lee",
+    "age": 16,
+    "gender": "Female"
+  },
+  {
+    "id": 11,
+    "firstname": "Aiden",
+    "lastname": "Garcia",
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 12,
+    "firstname": "Sofia",
+    "lastname": "Hernandez",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 13,
+    "firstname": "Liam",
+    "lastname": "Martinez",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 14,
+    "firstname": "Olivia",
+    "lastname": "Lopez",
+    "age": 16,
+    "gender": "Female"
+  },
+  {
+    "id": 15,
+    "firstname": "Lucas",
+    "lastname": "Perez",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 16,
+    "firstname": "Ava",
+    "lastname": "Adams",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 17,
+    "firstname": "Noah",
+    "lastname": "Thomas",
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 18,
+    "firstname": "Isabella",
+    "lastname": "Nelson",
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 19,
+    "firstname": "Mason",
+    "lastname": "Scott",
+    "age": 17,
+    "gender": "Male"
+  },
+  {
+    "id": 20,
+    "firstname": "Harper",
+    "lastname": "King",
+    "age": 16,
+    "gender": "Female"
+  }
+]

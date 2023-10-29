@@ -35,18 +35,28 @@ export default function RoomDetails({ params }: RouteComponentProps) {
         {isLoading ? (
           'Loading'
         ) : (
-          <Stack direction='row' justifyContent='space-between'>
-            <Stack gap={4}>
-              <Detail property='Name' value={data.name} />
-              <Detail property='Type' value={data.type} />
+          <Stack gap={4}>
+            <Stack direction='row' justifyContent='space-between'>
+              <Stack gap={4}>
+                <Detail property='Name' value={data.name} />
+                <Detail property='Type' value={data.type} />
+              </Stack>
+              <Stack gap={4}>
+                <Detail property='Location' value={data.location} />
+                <Detail property='Capacity' value={data.capacity} />
+              </Stack>
+              <Stack gap={4}>
+                <Detail property='Furniture' value={data.furniture} />
+                <Detail
+                  property='Amenities'
+                  value={data.amenities.join(', ')}
+                />
+              </Stack>
             </Stack>
-            <Stack gap={4}>
-              <Detail property='Location' value={data.location} />
-              <Detail property='Capacity' value={data.capacity} />
-            </Stack>
-            <Stack gap={4}>
-              <Detail property='Furniture' value={data.furniture} />
-              <Detail property='Amenities' value={data.amenities} />
+            <Stack>
+              <Typography variant='h6' sx={{ color: 'info.dark' }}>
+                Participants
+              </Typography>
             </Stack>
           </Stack>
         )}
