@@ -1,3 +1,4 @@
+import RoomDetailsSkeleton from '@components/Skeletons/RoomDetails'
 import StudentsTable from '@components/StudentsTable'
 import Title from '@components/Title'
 import ViewLayout from '@components/ViewLayout'
@@ -27,7 +28,9 @@ function Detail({
 export default function RoomDetails({ params }: RouteComponentProps) {
   const { data, isLoading } = useRoom(params.id!)
 
-  if (!data) return
+  if (isLoading) return <RoomDetailsSkeleton />
+
+  if (!data) return 'No Data'
 
   return (
     <ViewLayout>
