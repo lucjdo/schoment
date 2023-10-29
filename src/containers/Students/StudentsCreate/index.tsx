@@ -21,14 +21,17 @@ import { useAddStudent } from '@hooks/rooms/useAddStudent'
 
 export default function StudentsCreate() {
   const [openDialog, setOpenDialog] = useState(false)
-  const { register, handleSubmit, watch } = useForm<NewStudentsInputs>({})
+  const { register, handleSubmit, watch, reset } = useForm<NewStudentsInputs>()
   const { mutate } = useNewStudent()
   const { mutate: addToRoom } = useAddStudent()
 
-  const onSubmit: SubmitHandler<NewStudentsInputs> = (data) => {
+  const onSubmit: SubmitHandler<NewStudentsInputs> = async (data) => {
     const newUser: Student = { ...data, id: crypto.randomUUID() }
+    console.log(newUser)
     mutate(newUser)
-    addToRoom({ student: newUser, roomId: data.room.id })
+    addToRoom({ student: newUser, roomId: data.room?.id })
+    setOpenDialog(false)
+    reset()
   }
 
   return (
@@ -40,8 +43,9 @@ export default function StudentsCreate() {
             <FormControl>
               <FormLabel>First Name</FormLabel>
               <TextField
+                required
                 placeholder='Type in here…'
-                {...(register('firstname'), { required: true })}
+                {...register('firstname')}
               />
             </FormControl>
             <FormControl>
@@ -54,10 +58,7 @@ export default function StudentsCreate() {
             </FormControl>
             <FormControl sx={{ m: 1 }}>
               <FormLabel>Gender</FormLabel>
-              <Select
-                value={watch('gender')}
-                {...(register('gender'), { required: true })}
-              >
+              <Select required value={watch('gender')} {...register('gender')}>
                 {GENDER_OPTIONS.map((type) => (
                   <MenuItem key={type} value={type}>
                     {type}
@@ -77,10 +78,7 @@ export default function StudentsCreate() {
             </FormControl>
             <FormControl sx={{ m: 1 }}>
               <FormLabel>Room</FormLabel>
-              <Select
-                value={watch('room')}
-                {...(register('room'), { required: true })}
-              >
+              <Select value={watch('room')} required {...register('room')}>
                 {ROOM_OPTIONS.map((type) => (
                   <MenuItem key={type.id} value={type as unknown as string}>
                     {type.name}
