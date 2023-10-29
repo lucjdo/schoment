@@ -2,6 +2,7 @@ import ViewLayout from '@components/ViewLayout'
 import RoomsTable from '@components/Rooms/RoomsTable'
 import { useRooms } from '@hooks/rooms/useRooms'
 import ViewHeader from '@components/ViewHeader'
+import TableSkeleton from '@components/Skeletons/Table'
 
 export default function Rooms() {
   const { data, isLoading } = useRooms()
@@ -16,7 +17,7 @@ export default function Rooms() {
           href: '/rooms/create'
         }}
       />
-      {isLoading ? 'Loading Rooms' : <RoomsTable rooms={data!} />}
+      {isLoading ? <TableSkeleton /> : <RoomsTable rooms={data!} />}
     </ViewLayout>
   )
 }

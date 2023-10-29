@@ -11,6 +11,7 @@
       "@containers/*": ["src/containers/*"],
       "@services/*": ["src/services/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@assets/*": ["src/assets/*"],
     },
 
     /* Bundler mode */
