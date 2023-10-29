@@ -17,6 +17,7 @@ export interface Student {
   id: number
   age: number
   gender: 'Male' | 'Female'
+  room: Pick<Room, 'id' | 'name'>
 }
 
 export interface Accessories {

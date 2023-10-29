@@ -1,3 +1,4 @@
+import StudentsTable from '@components/StudentsTable'
 import Title from '@components/Title'
 import ViewLayout from '@components/ViewLayout'
 import { useRoom } from '@hooks/rooms/useRoom'
@@ -54,9 +55,16 @@ export default function RoomDetails({ params }: RouteComponentProps) {
               </Stack>
             </Stack>
             <Stack>
-              <Typography variant='h6' sx={{ color: 'info.dark' }}>
+              <Typography variant='subtitle1' sx={{ color: 'info.dark' }}>
                 Participants
               </Typography>
+              {data.students ? (
+                <StudentsTable students={data.students} />
+              ) : (
+                <Typography variant='h6'>
+                  No participants in this room
+                </Typography>
+              )}
             </Stack>
           </Stack>
         )}
