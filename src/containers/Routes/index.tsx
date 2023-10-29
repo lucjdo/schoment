@@ -1,5 +1,6 @@
 import Rooms from '@containers/Rooms'
 import RoomCreate from '@containers/Rooms/RoomCreate'
+import RoomDetails from '@containers/Rooms/RoomDetails'
 import { Route, Switch } from 'wouter'
 
 function RoomsRoutes() {
@@ -11,7 +12,7 @@ function RoomsRoutes() {
       <Route path='/rooms/create'>
         <RoomCreate />
       </Route>
-      <Route path='/rooms/:id'>Room</Route>
+      <Route path='/rooms/:id' component={RoomDetails} />
     </Switch>
   )
 }

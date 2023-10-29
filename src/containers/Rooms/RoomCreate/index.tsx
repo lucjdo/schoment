@@ -14,7 +14,7 @@ import { useState } from 'react'
 import { ConfirmationDialog } from '@components/ConfirmationDialog'
 import Title from '@components/Title'
 import { NewRoomInputs } from './types'
-import { useNewRoom } from '@hooks/useRooms'
+import { useNewRoom } from '@hooks/rooms/useNewRoom'
 
 export default function RoomCreate() {
   const [openDialog, setOpenDialog] = useState(false)

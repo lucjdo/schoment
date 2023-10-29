@@ -4,7 +4,7 @@ import ViewLayout from '@components/ViewLayout'
 import RoomsTable from '@components/Rooms/RoomsTable'
 import ButtonLink from '@components/ButtonLink'
 import Title from '@components/Title'
-import { useRooms } from '@hooks/useRooms'
+import { useRooms } from '@hooks/rooms/useRooms'
 
 export default function Rooms() {
   const { data, isLoading } = useRooms()

@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "firstname": "John",
+    "lastname": "Smith",
+    "age": 16,
+    "gender": "Male",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 2,
+    "firstname": "Emily",
+    "lastname": "Johnson",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 3,
+    "firstname": "Michael",
+    "lastname": "Williams",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 4,
+    "firstname": "Sophia",
+    "lastname": "Brown",
+    "age": 16,
+    "gender": "Female",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 5,
+    "firstname": "William",
+    "lastname": "Jones",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 6,
+    "firstname": "Olivia",
+    "lastname": "Davis",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 7,
+    "firstname": "James",
+    "lastname": "Miller",
+    "age": 16,
+    "gender": "Male",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 8,
+    "firstname": "Emma",
+    "lastname": "Wilson",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 9,
+    "firstname": "Benjamin",
+    "lastname": "Taylor",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 10,
+    "firstname": "Mia",
+    "lastname": "Lee",
+    "age": 16,
+    "gender": "Female",
+    "room": {
+      "id": "11a52ddd-ac81-4fb9-9ee0-03181473bc61",
+      "name": "Classroom A"
+    }
+  },
+  {
+    "id": 11,
+    "firstname": "Aiden",
+    "lastname": "Garcia",
+    "age": 16,
+    "gender": "Male",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 12,
+    "firstname": "Sofia",
+    "lastname": "Hernandez",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 13,
+    "firstname": "Liam",
+    "lastname": "Martinez",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 14,
+    "firstname": "Olivia",
+    "lastname": "Lopez",
+    "age": 16,
+    "gender": "Female",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 15,
+    "firstname": "Lucas",
+    "lastname": "Perez",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 16,
+    "firstname": "Ava",
+    "lastname": "Adams",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 17,
+    "firstname": "Noah",
+    "lastname": "Thomas",
+    "age": 16,
+    "gender": "Male",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 18,
+    "firstname": "Isabella",
+    "lastname": "Nelson",
+    "age": 15,
+    "gender": "Female",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 19,
+    "firstname": "Mason",
+    "lastname": "Scott",
+    "age": 17,
+    "gender": "Male",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  },
+  {
+    "id": 20,
+    "firstname": "Harper",
+    "lastname": "King",
+    "age": 16,
+    "gender": "Female",
+    "room": {
+      "id": "fcd6e02f-9c37-4e41-94d2-29a9db884614",
+      "name": "Classroom B"
+    }
+  }
+]

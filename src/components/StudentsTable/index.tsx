@@ -10,15 +10,15 @@ import TableRow from '@mui/material/TableRow'
 import TableSortLabel from '@mui/material/TableSortLabel'
 import { visuallyHidden } from '@mui/utils'
 import { EnhancedTableProps, Order, RoomsTableProps } from './types'
-import { Room } from 'src/types'
+import { Student } from 'src/types'
 import sortBy from 'lodash.sortby'
 import { getRowsOptions, headCells, maxRowsPerPage } from './utils'
 import { Link } from 'wouter'
 
-function RoomsTableHead(props: EnhancedTableProps) {
+function StudentsTableHead(props: EnhancedTableProps) {
   const { order, orderBy, onRequestSort } = props
   const createSortHandler =
-    (property: keyof Room) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof Student) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property)
     }
 
@@ -36,6 +36,7 @@ function RoomsTableHead(props: EnhancedTableProps) {
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
+              sx={{ color: 'info.dark' }}
             >
               {headCell.label}
               {orderBy === headCell.id ? (
@@ -51,15 +52,15 @@ function RoomsTableHead(props: EnhancedTableProps) {
   )
 }
 
-export default function RoomsTable({ rooms }: RoomsTableProps) {
+export default function StudentsTable({ students }: RoomsTableProps) {
   const [order, setOrder] = React.useState<Order>('asc')
-  const [orderBy, setOrderBy] = React.useState<keyof Room>('name')
+  const [orderBy, setOrderBy] = React.useState<keyof Student>('firstname')
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
 
   const handleRequestSort = (
     _event: React.MouseEvent<unknown>,
-    property: keyof Room
+    property: keyof Student
   ) => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
@@ -79,33 +80,32 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rooms.length) : 0
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - students.length) : 0
 
-  const visibleRows: Room[] = React.useMemo(() => {
-    const slicedArray = rooms.slice(
+  const visibleRows: Student[] = React.useMemo(() => {
+    const slicedArray = students.slice(
       page * rowsPerPage,
       page * rowsPerPage + rowsPerPage
     )
     const sortedArray = sortBy(slicedArray, orderBy)
     return order === 'asc' ? sortedArray : sortedArray.reverse()
-  }, [page, rowsPerPage, rooms, orderBy, order])
+  }, [page, rowsPerPage, students, orderBy, order])
 
   return (
     <Box sx={{ width: '100%' }}>
       <TableContainer>
-        <Table sx={{ minWidth: 750 }} aria-labelledby='tableTitle'>
-          <RoomsTableHead
+        <Table sx={{ minWidth: 750 }}>
+          <StudentsTableHead
             order={order}
             orderBy={orderBy}
             onRequestSort={handleRequestSort}
-            rowCount={rooms.length}
+            rowCount={students.length}
           />
           <TableBody>
             {visibleRows.map((row, index) => {
               const labelId = `enhanced-table-checkbox-${index}`
-
               return (
-                <Link href={`/rooms/${row.id}`} key={row.id}>
+                <Link href={`/students/${row.id}`} key={row.id}>
                   <TableRow hover tabIndex={-1} sx={{ cursor: 'pointer' }}>
                     <TableCell
                       component='th'
@@ -113,11 +113,12 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
                       scope='row'
                       padding='none'
                     >
-                      {row.name}
+                      {row.firstname}
                     </TableCell>
-                    <TableCell>{row.type}</TableCell>
-                    <TableCell align='center'>{row.location}</TableCell>
-                    <TableCell align='right'>{row.capacity}</TableCell>
+                    <TableCell>{row.lastname}</TableCell>
+                    <TableCell>{row.room.name}</TableCell>
+                    <TableCell align='center'>{row.gender}</TableCell>
+                    <TableCell align='right'>{row.age}</TableCell>
                   </TableRow>
                 </Link>
               )
@@ -131,9 +132,9 @@ export default function RoomsTable({ rooms }: RoomsTableProps) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={getRowsOptions(maxRowsPerPage(rooms.length))}
+        rowsPerPageOptions={getRowsOptions(maxRowsPerPage(students.length))}
         component='div'
-        count={rooms.length}
+        count={students.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
