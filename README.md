@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# Schoment: The School Management
+For running the app just clone the repo and run:
+- `npm run install`
+- `npm run dev`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The app uses session storage as its 'backend' to fetch and save rooms and students. You don't need to worry because all data will be erased after you close the window.
 
-Currently, two official plugins are available:
+## Stack
+- React + Vite
+- Typescript
+- React query
+- Context
+- Material UI
+- EsLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Images & Video
 
-## Expanding the ESLint configuration
+https://github.com/lucjdo/schoment/assets/33455403/4fda9d80-577f-425a-bbd2-43ec0d9b5cf7
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![image](https://github.com/lucjdo/schoment/assets/33455403/769a0506-86b1-4172-a901-08f2d63c2292)
+![image](https://github.com/lucjdo/schoment/assets/33455403/533b94ca-81cd-4286-accd-b9ce2e03fdd6)
+![image](https://github.com/lucjdo/schoment/assets/33455403/2f43073d-a275-4282-b456-c4bd7cae4959)
+![image](https://github.com/lucjdo/schoment/assets/33455403/82e5a5ab-d9df-4696-ac74-19941b3721e8)
+![image](https://github.com/lucjdo/schoment/assets/33455403/dd4da108-15e0-489c-9a60-f86e0a238589)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
