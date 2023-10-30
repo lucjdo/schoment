@@ -13,23 +13,30 @@ import {
 } from '@mui/material'
 import { GENDER_OPTIONS, ROOM_OPTIONS } from './utils'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Title from '@components/Title'
 import { NewStudentsInputs } from './types'
 import { useNewStudent } from '@hooks/students/useNewStudent'
 import { Student } from 'src/types'
 import { useAddStudent } from '@hooks/rooms/useAddStudent'
+import { FeedbackContext } from '../../../context/Feedback'
 
 export default function StudentsCreate() {
   const [openDialog, setOpenDialog] = useState(false)
+  const feedbackContext = useContext(FeedbackContext)
   const { register, handleSubmit, watch, reset } = useForm<NewStudentsInputs>()
   const { mutate } = useNewStudent()
   const { mutate: addToRoom } = useAddStudent()
 
   const onSubmit: SubmitHandler<NewStudentsInputs> = async (data) => {
     const newUser: Student = { ...data, id: crypto.randomUUID() }
-    console.log(newUser)
-    mutate(newUser)
+    mutate(newUser, {
+      onSuccess: () =>
+        feedbackContext?.showFeedbackMessage(
+          'New student created succesfully!',
+          'success'
+        )
+    })
     addToRoom({ student: newUser, roomId: data.room?.id })
     setOpenDialog(false)
     reset()
