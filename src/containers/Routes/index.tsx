@@ -4,12 +4,12 @@ import RoomCreate from '@containers/Rooms/RoomCreate'
 import RoomDetails from '@containers/Rooms/RoomDetails'
 import Students from '@containers/Students'
 import StudentsCreate from '@containers/Students/StudentsCreate'
-import { Route, Switch } from 'wouter'
+import { Redirect, Route, Switch } from 'wouter'
 
 function RoomsRoutes() {
   return (
-    <Switch>
-      <ErrorBoundary fallback={<p>Sorry! Something went with Rooms</p>}>
+    <ErrorBoundary fallback={<p>Sorry! Something went with Rooms</p>}>
+      <Switch>
         <Route path='/rooms'>
           <Rooms />
         </Route>
@@ -17,29 +17,32 @@ function RoomsRoutes() {
           <RoomCreate />
         </Route>
         <Route path='/rooms/:id' component={RoomDetails} />
-      </ErrorBoundary>
-    </Switch>
+      </Switch>
+    </ErrorBoundary>
   )
 }
 
 function StudentsRoutes() {
   return (
-    <Switch>
-      <ErrorBoundary fallback={<p>Sorry! Something went with students</p>}>
+    <ErrorBoundary fallback={<p>Sorry! Something went with students</p>}>
+      <Switch>
         <Route path='/students'>
           <Students />
         </Route>
         <Route path='/students/create'>
           <StudentsCreate />
         </Route>
-      </ErrorBoundary>
-    </Switch>
+      </Switch>
+    </ErrorBoundary>
   )
 }
 
 export default function Routes() {
   return (
     <>
+      <Route path='/'>
+        <Redirect to='/rooms' />
+      </Route>
       <RoomsRoutes />
       <StudentsRoutes />
     </>
