@@ -1,22 +1,29 @@
-import React from 'react'
+import { Component, ReactNode } from 'react'
 
-export class ErrorBoundary extends React.Component {
-  constructor(props) {
+interface ErrorBoundaryProps {
+  fallback: ReactNode
+  children: ReactNode
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean
+}
+
+export class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
+  constructor(props: ErrorBoundaryProps) {
     super(props)
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
+  static getDerivedStateFromError() {
     return { hasError: true }
   }
 
-  componentDidCatch(error, info) {
-    // Example "componentStack":
-    //   in ComponentThatThrows (created by App)
-    //   in ErrorBoundary (created by App)
-    //   in div (created by App)
-    //   in App
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  componentDidCatch(error: any, info: any) {
     console.error(error, info.componentStack)
   }
 
@@ -29,3 +36,5 @@ export class ErrorBoundary extends React.Component {
     return this.props.children
   }
 }
+
+export default ErrorBoundary
