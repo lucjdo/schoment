@@ -11,14 +11,16 @@ import {
 } from '@mui/material'
 import { AMENITIES_OPTIONS, TYPE_OPTIONS, addMissingProps } from './utils'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { ConfirmationDialog } from '@components/ConfirmationDialog'
 import Title from '@components/Title'
 import { NewRoomInputs } from './types'
 import { useNewRoom } from '@hooks/rooms/useNewRoom'
+import { FeedbackContext } from '../../../context/Feedback'
 
 export default function RoomCreate() {
   const [openDialog, setOpenDialog] = useState(false)
+  const feedbackContext = useContext(FeedbackContext)
   const { register, handleSubmit, watch } = useForm<NewRoomInputs>({
     defaultValues: {
       name: 'Classroom',
@@ -31,7 +33,13 @@ export default function RoomCreate() {
 
   const onSubmit: SubmitHandler<NewRoomInputs> = (data) => {
     const newRoom = addMissingProps(data)
-    mutate(newRoom)
+    mutate(newRoom, {
+      onSuccess: () =>
+        feedbackContext?.showFeedbackMessage(
+          'Room created succesfully!',
+          'success'
+        )
+    })
   }
 
   return (
