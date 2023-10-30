@@ -4,7 +4,8 @@ import MainLayout from '@components/MainLayout'
 import Menu from '@containers/Menu'
 import Routes from '@containers/Routes'
 import './App.css'
-import { FeedbackProvider } from './context/feedback'
+import FeedbackMsg from '@containers/FeedbackMsg'
+import { FeedbackProvider } from './context/Feedback'
 
 const queryClient = new QueryClient()
 
@@ -16,6 +17,7 @@ function App() {
           <Menu />
           <Routes />
         </MainLayout>
+        <FeedbackMsg />
       </FeedbackProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

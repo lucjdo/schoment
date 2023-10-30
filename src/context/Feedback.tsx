@@ -15,7 +15,7 @@ interface FeedbackContextType {
   hideFeedbackMessage: () => void
 }
 
-const FeedbackContext = createContext<FeedbackContextType | undefined>(
+export const FeedbackContext = createContext<FeedbackContextType | undefined>(
   undefined
 )
 
