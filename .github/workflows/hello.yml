@@ -12,3 +12,7 @@ jobs:
       - name: Echo the message
         run: |
           echo "DEVTODO"
+      - name: Fecha de hoy
+        run: date
+      - name: command
+        run: ls -l
