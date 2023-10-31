@@ -35,7 +35,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        if: ${{ github.event_name == 'push' }}
         run: npm run build
       - uses: actions/upload-artifact@v3
         with:
@@ -72,4 +71,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Deploy
+        if: ${{ github.event_name == 'push' }}
         run: echo Deploy
