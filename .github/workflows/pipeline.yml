@@ -1,4 +1,7 @@
 name: Deployment Pipeline
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 on:
   push:
@@ -8,12 +11,6 @@ on:
     types: [opened, synchronize]
 
 jobs:
-
-  cancel_previous_runs:
-    runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
       
   lint:
     runs-on: ubuntu-latest
