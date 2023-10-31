@@ -1,4 +1,7 @@
 # Schoment: The School Management
+
+[![Deployment Pipeline](https://github.com/lucjdo/schoment/actions/workflows/pipeline.yml/badge.svg)](https://github.com/lucjdo/schoment/actions/workflows/pipeline.yml)
+
 For running the app just clone the repo and run:
 - `npm run install`
 - `npm run dev`
