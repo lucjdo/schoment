@@ -9,6 +9,12 @@ on:
 
 jobs:
 
+  cancel_previous_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action
+      
   lint:
     runs-on: ubuntu-latest
     steps:
