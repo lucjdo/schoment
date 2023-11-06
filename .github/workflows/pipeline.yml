@@ -61,7 +61,7 @@ jobs:
           name: dist
           path: dist
       - name: Unit Tests
-        run: echo Tests
+        run: npm test
 
   deploy:
     needs: [tests]
