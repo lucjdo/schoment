@@ -24,6 +24,7 @@
     "wouter": "^2.12.1"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
     "@types/lodash.sortby": "^4.7.8",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
